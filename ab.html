@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Catalysts</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: serif;
+            background-image: url('f.gif');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: palevioletred;
+            text-align: center;
+        }
+        .header {
+            background-color: #b26ccb;
+            color: #fce5de;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            height: 50px;
+            width: 200px;
+        }
+        .menu-btn {
+            font-size: 30px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: #fce5de;
+        }
+        .menu-btn:focus {
+            outline: none;
+        }
+        .side-nav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            right: 0; 
+            background-color: #b26ccb;
+            overflow-x: hidden;
+            transition: 0.5s; 
+            padding-top: 60px;
+            z-index: 1000; 
+        }
+        .side-nav a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 20px;
+            color: #fce5de;
+            display: block;
+            transition: 0.3s;
+        }
+        .side-nav a:hover {
+            background-color: #fce5de;
+            color: #b26ccb;
+        }
+        .side-nav .close-btn {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 30px;
+            color: #fce5de;
+        }
+        .container {
+            display: inline-block;
+            text-align: center;
+            background-color: #f2f2f2;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 50px;
+            height: 300px;
+            width:700px;
+            animation: lift 1s ease-out; /* Add lifting animation */
+        }
+
+        /* Lifting animation */
+        @keyframes lift {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header"> 
+        <img class="logo" src="log.png" alt="Logo">
+        <button class="menu-btn" onclick="openNav()">☰</button>
+    </div>
+
+    <div id="sideNav" class="side-nav">
+        <a href="javascript:void(0)" class="close-btn" onclick="closeNav()">&times;</a>
+        <a href="home.html">Home</a>
+        <a href="ab.html">About Us</a>
+        <a href="ws.html">Laboratory Worksheet</a>
+        <a href="doc.html">Results & Documentation</a>
+        <a href="cnt.html">Contact</a>
+    </div>
+
+    <br>
+
+    <div class="container">
+        <h2>About Us</h2>
+        <p>
+            We are The Catalyst, a team of passionate STEM students from Emilio Aguinaldo College - Manila. Our group was established in 2024 with the vision of inspiring the youth to take part in social change, particularly for the vulnerable sectors in our country. Since then, The Catalyst has been committed to making a positive impact through a project proposal titled "Typhoon Relief and Agricultural Recovery Fund Project."
+        </p>
+
+        <h2>Our Mission</h2>
+        <p>
+            Our mission is to bring creative and innovative solutions in service to the community and the country. We believe in Virtue, Excellence, and Service, and we are driven by our shared passion for education. Each member of our team brings unique talents and perspectives, enabling us to work together effectively and achieve our goals. Through our efforts, we aim to inspire others, especially the youth, to join us in making a difference.
+        </p>
+    </div>
+
+    <script>
+        function openNav() {
+            document.getElementById("sideNav").style.width = "250px"; // Open the side menu
+        }
+
+        function closeNav() {
+            document.getElementById("sideNav").style.width = "0"; // Close the side menu
+        }
+    </script>
+</body>
+</html>

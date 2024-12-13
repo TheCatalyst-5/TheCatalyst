@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Catalysts</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: serif;
+            background-image: url('f.gif');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: palevioletred;
+            text-align: center;
+            overflow-x: hidden;
+        }
+        .header {
+            background-color: #b26ccb;
+            color: #fce5de;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .a {
+            height: 50px;
+            width: 200px;
+        }
+        .menu-btn {
+            font-size: 30px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: #fce5de;
+        }
+        .menu-btn:focus {
+            outline: none;
+        }
+        .side-nav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            right: 0;
+            background-color: #b26ccb;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+            z-index: 1000; /* Ensure side-nav appears on top */
+        }
+        .side-nav a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 20px;
+            color: #fce5de;
+            display: block;
+            transition: 0.3s;
+        }
+        .side-nav a:hover {
+            background-color: #fce5de;
+            color: #b26ccb;
+        }
+        .side-nav .close-btn {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 30px;
+            color: #fce5de;
+        }
+        .center {
+            font-size: 40px;
+            padding-top: 40px;
+            color: #ffbcd2;
+            text-align: center;
+            font-family: serif;
+        }
+        .pcenter {
+            padding-top: 100px;
+            height: 130px;
+            width: 95%;
+        }
+        .click button {
+            color: #f280aa;
+            border-radius: 30px;
+            font-size: 25px;
+            background-color: #b26ccb;
+            padding: 20px;
+        }
+        .click button:hover {
+            background-color: powderblue;
+        }
+        .click a {
+            text-decoration: none;
+            color: white;
+        }
+        h1 {
+            color: darkblue;
+            padding: 20px;
+        }
+
+        /* Animation styles */
+        .content {
+            animation: lift 1s ease-out;
+            position: relative;
+            z-index: 0; /* Ensure content is below the side-nav */
+        }
+
+        @keyframes lift {
+            from {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img class="a" src="log.png" alt="Logo">
+        <button class="menu-btn" onclick="openNav()">☰</button>
+    </div>
+
+    <div id="sideNav" class="side-nav">
+        <a href="javascript:void(0)" class="close-btn" onclick="closeNav()">&times;</a>
+        <a href="home.html">Home</a>
+        <a href="ab.html">About Us</a>
+        <a href="ws.html">Laboratory Worksheet</a>
+        <a href="doc.html">Results & Documentation</a>
+        <a href="cnt.html">Contact</a>
+    </div>
+
+    <div class="content">
+        <img class="pcenter" src="gc.png" alt="Graphic">
+        <p class="center">UNRAVELLING THE MYSTERIES OF ATOMS</p>
+        <div class="click">
+            <button><a href="ab.html">Discover More!</a></button>
+        </div>
+    </div>
+
+    <script>
+        function openNav() {
+            document.getElementById("sideNav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("sideNav").style.width = "0";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Catalysts</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: serif;
+            background-image: url('f.gif');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: palevioletred;
+            text-align: center;
+        }
+        .header {
+            background-color: #b26ccb;
+            color: #fce5de;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            height: 50px;
+            width: 200px;
+        }
+        .menu-btn {
+            font-size: 30px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: #fce5de;
+        }
+        .menu-btn:focus {
+            outline: none;
+        }
+        .side-nav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            right: 0;
+            background-color: #b26ccb;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+        .side-nav a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 20px;
+            color: #fce5de;
+            display: block;
+            transition: 0.3s;
+        }
+        .side-nav a:hover {
+            background-color: #fce5de;
+            color: #b26ccb;
+        }
+        .side-nav .close-btn {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 30px;
+            color: #fce5de;
+        }
+        .content {
+            padding: 20px;
+            text-align: left;
+            background-color: rgba(255, 255, 255, 0.95);
+            margin: 20px auto;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 800px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: lift 1s ease-out;
+        }
+        h2 {
+            color: #b26ccb;
+        }
+        h1 {
+            color: darkblue;
+            padding: 20px;
+        }
+        p {
+            text-align: justify;
+        }
+
+        @keyframes lift {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .carousel {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .carousel-track {
+            display: flex;
+            transition: transform 0.3s ease-in-out;
+        }
+        .carousel-slide {
+            min-width: 100%;
+        }
+        .carousel-slide img {
+            width: 100%;
+            display: block;
+        }
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .nav-btn {
+            background-color: pink;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease;
+        }
+        .nav-btn:hover {
+            transform: scale(1.1);
+        }
+        .nav-btn:focus {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img class="logo" src="log.png" alt="Logo">
+        <button class="menu-btn" onclick="openNav()">☰</button>
+    </div>
+
+    <div id="sideNav" class="side-nav">
+        <a href="javascript:void(0)" class="close-btn" onclick="closeNav()">&times;</a>
+        <a href="home.html">Home</a>
+        <a href="ab.html">About Us</a>
+        <a href="ws.html">Laboratory Worksheet</a>
+        <a href="doc.html">Results & Documentation</a>
+        <a href="cnt.html">Contact</a>
+    </div>
+
+    <div class="content">
+        <h2>Results Q1</h2>
+        <div class="carousel">
+            <div class="carousel-track">
+                <div class="carousel-slide"><img src="R1.png"></div>
+                <div class="carousel-slide"><img src="R2.png"></div>
+                <div class="carousel-slide"><img src="R3.png"></div>
+            </div>
+            <div class="carousel-nav">
+                <button class="nav-btn prev-btn">&lt;</button>
+                <button class="nav-btn next-btn">&gt;</button>
+            </div>
+        </div>
+    </div>
+<div class="content">
+        <h2>Documentation Q1</h2>
+        <div class="carousel">
+            <div class="carousel-track">
+                <div class="carousel-slide"><img src="11.jpg"></div>
+                <div class="carousel-slide"><img src="12.jpg"></div>
+                <div class="carousel-slide"><img src="13.jpg"></div>
+                <div class="carousel-slide"><img src="15.jpg"></div>
+            </div>
+            <div class="carousel-nav">
+                <button class="nav-btn prev-btn">&lt;</button>
+                <button class="nav-btn next-btn">&gt;</button>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <h2>Results Q2</h2>
+        <div class="carousel">
+            <div class="carousel-track">
+                <div class="carousel-slide"><img src="m1.jpg"></div>
+                <div class="carousel-slide"><img src="m2.jpg"></div>
+                <div class="carousel-slide"><img src="m3.jpg"></div>
+                <div class="carousel-slide"><img src="n4.png"></div>
+                <div class="carousel-slide"><img src="m5.jpg"></div>
+                <div class="carousel-slide"><img src="m6.jpg"></div>
+            </div>
+            <div class="carousel-nav">
+                <button class="nav-btn prev-btn">&lt;</button>
+                <button class="nav-btn next-btn">&gt;</button>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <h2>Documentation Q2</h2>
+        <div class="carousel">
+            <div class="carousel-track">
+                <div class="carousel-slide"><img src="21.jpg"></div>
+                <div class="carousel-slide"><img src="22.jpg"></div>
+                <div class="carousel-slide"><img src="23.jpg"></div>
+                <div class="carousel-slide"><img src="24.jpg"></div>
+            </div>
+            <div class="carousel-nav">
+                <button class="nav-btn prev-btn">&lt;</button>
+                <button class="nav-btn next-btn">&gt;</button>
+            </div>
+        </div>
+    </div>
+    <script>
+          function openNav() {
+            document.getElementById("sideNav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("sideNav").style.width = "0";
+        }
+        document.querySelectorAll('.carousel').forEach((carousel) => {
+    const track = carousel.querySelector('.carousel-track');
+    const slides = Array.from(track.children);
+    const prevButton = carousel.querySelector('.prev-btn');
+    const nextButton = carousel.querySelector('.next-btn');
+
+    let currentIndex = 0;
+
+    function updateCarousel(index) {
+        track.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    nextButton.addEventListener('click', () => {
+        if (currentIndex < slides.length - 1) {
+            currentIndex++;
+            updateCarousel(currentIndex);
+        }
+    });
+
+    prevButton.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel(currentIndex);
+        }
+    });
+
+    let startX, currentX;
+
+    track.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+    });
+
+    track.addEventListener('touchmove', (e) => {
+        currentX = e.touches[0].clientX;
+    });
+
+    track.addEventListener('touchend', () => {
+        if (startX && currentX) {
+            const diff = currentX - startX;
+            if (diff > 50 && currentIndex > 0) {
+                currentIndex--;
+            } else if (diff < -50 && currentIndex < slides.length - 1) {
+                currentIndex++;
+            }
+            updateCarousel(currentIndex);
+        }
+        startX = currentX = null;
+    });
+});
+    </script>
+</body>
+</html>
